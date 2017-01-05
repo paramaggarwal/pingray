@@ -31,23 +31,24 @@ void draw()
     if (inBuffer != null) {
       String[] messages = inBuffer.split("\\s+");
       
-      if (messages.length != 5) {
+      if (messages.length != 2) {
         println("Invalid message size: ", messages.length);
         return;
       }
       
+            
       Float heading = Float.parseFloat(messages[0]);
       int u1 = Integer.parseInt(messages[1]);
-      int u2 = Integer.parseInt(messages[2]);
-      int u3 = Integer.parseInt(messages[3]);
-      int u4 = Integer.parseInt(messages[4]);
-      //println(heading, u1, u2, u3, u4);
+      //int u2 = Integer.parseInt(messages[2]);
+      //int u3 = Integer.parseInt(messages[3]);
+      //int u4 = Integer.parseInt(messages[4]);
+      println(heading, u1);
       
       //background(255);
       //fill(0);
       
       // Convert polar to cartesian
-      float r = Math.min(u1, Math.min(u2, Math.min(u3, u4)));
+      float r = u1;
       float theta = radians(heading);
       float x = r * cos(theta);
       float y = r * sin(theta);
